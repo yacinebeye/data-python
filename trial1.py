@@ -6,16 +6,16 @@ for i in range(5):
 
     while True: 
         try: 
-            score = (int(input(f'Enter test score {i+1} : ')))
+            score = (float(input(f'Enter test score {i+1} : ')))
             sum=sum+score
 
 # Adding error handling for invalid input            
             if score < 0 or score > 100:  
-                print (ValueError("Invalid score , please try again"))
+                print(ValueError("Invalid! Score must be between 0 and 100, please try again"))
             break
                 #return myscore 
-        except ValueError as error:
-            print(error)
+        except ValueError:      #as error:
+            print("Error, please enter a numeric value between 0 and 100")
 
 # getting the average of the scores and printing it 
 avg=sum/5.0
